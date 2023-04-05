@@ -1,15 +1,18 @@
 * {
-	box-sizing: border-box;
-}
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  
+  /* Container styles */
+  body {
+    font-family: Arial, sans-serif;
+    padding: 16px;
+    max-width: 800px;
+    margin: 0 auto;
+  }
 
-body {
-	margin: 0;
-	padding: 0;
-	background-color: #F8F8F8;
-	font-family: Arial, sans-serif;
-}
-
-.container {
+  .container {
 	max-width: 600px;
 	margin: 50px auto;
 	background-color: #FFF;
@@ -18,38 +21,15 @@ body {
 	box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 }
 
-h1 {
-	text-align: center;
-	margin-top: 0;
-}
-
-form {
-	display: flex;
-	margin-bottom: 20px;
-}
-
-form input[type="text"] {
-	flex-grow: 1;
-	padding: 10px;
-	border: none;
-	border-radius: 5px;
-	font-size: 16px;
-}
-
-form button[type="submit"] {
-	background-color: #4CAF50;
-	color: #FFF;
-	border: none;
-	border-radius: 5px;
-	padding: 10px;
-	cursor: pointer;
-	font-size: 16px;
-	margin-left: 10px;
-}
-
 .completed {
     text-decoration: line-through;
     color: rgb(221, 219, 219);
+}
+  
+  /* Heading styles */
+  h1 {
+	text-align: center;
+	margin-top: 0;
 }
 
 ul {
@@ -77,29 +57,142 @@ ul li input[type="checkbox"] {
 	margin-right: 10px;
 }
 
-ul li button.delete {
-	background-color: #F44336;
+ul li button.Delete{
+	background-color: red;
 	color: #FFF;
 	border: none;
 	border-radius: 5px;
 	padding: 5px 10px;
 	font-size: 12px;
 	cursor: pointer;
+    display: flex;
+}
+  
+form button[type="submit"] {
+	background-color: #4CAF50;
+	color: #FFF;
+	border: none;
+	border-radius: 5px;
+	padding: 10px;
+	cursor: pointer;
+	font-size: 16px;
+	margin-left: 10px;
 }
 
-@media only screen and (max-width: 600px) {
-	form {
-		flex-wrap: wrap;
-	}
-	form input[type="text"] {
-		flex-grow: 1;
-		margin-bottom: 10px;
-		margin-right: 0;
-	}
-	form button[type="submit"] {
-		flex-grow: 1;
-		margin-left: 0;
-	}
-} 
+button[type="submit"]:hover {
+background-color: #0056b3;
+}
 
+button[type="submit"]:focus {
+outline: none;
+box-shadow: 0 0 2px 2px #007bff;
+}
 
+form {
+	display: flex;
+	margin-bottom: 20px;
+}
+
+form input[type="text"] {
+	flex-grow: 1;
+	padding: 10px;
+	border: none;
+	border-radius: 5px;
+	font-size: 16px;
+}
+
+input[type="text"] {
+	flex-grow: 1;
+	padding: 10px;
+	border: none;
+	border-radius: 5px;
+	font-size: 16px;   
+}
+
+button[type="submit"]:active {
+background-color: #004080;
+}
+
+/* Todo list styles */
+.todo-list {
+list-style: none;
+padding: 0;
+}
+
+.todo-item {
+display: flex;
+align-items: center;
+margin-bottom: 8px;
+}
+
+.todo-checkbox {
+margin-right: 8px;
+}
+
+.todo-text {
+flex: 1;
+font-size: 18px;
+padding: 8px;
+border: none;
+background-color: #fff;
+}
+
+.todo-text:focus {
+outline: none;
+box-shadow: 0 0 2px 2px #f0f0f0;
+}
+
+.todo-delete-btn,
+.todo-edit-btn {
+background-color: #f0f0f0;
+border: none;
+color: #333;
+cursor: pointer;
+font-size: 16px;
+margin-left: 8px;
+padding: 8px;
+transition: background-color 0.2s ease-in-out;
+}
+
+.todo-delete-btn:hover,
+.todo-edit-btn:hover {
+background-color: #e0e0e0;
+}
+
+.todo-delete-btn:focus,
+.todo-edit-btn:focus {
+outline: none;
+box-shadow: 0 0 2px 2px #f0f0f0;
+}
+
+.todo-delete-btn:active,
+.todo-edit-btn:active {
+background-color: #d0d0d0;
+}
+
+/* Media queries */
+@media screen and (max-width: 600px) {
+#todo-input {
+    font-size: 14px;
+}
+
+.todo-text {
+    font-size: 16px;
+}
+
+.todo-delete-btn,
+.todo-edit-btn {
+    font-size: 14px;
+}
+
+form {
+    flex-wrap: wrap;
+}
+
+form button[type="submit"] {
+    flex-grow: 1;
+    margin-left: 0;
+}
+
+}
+  

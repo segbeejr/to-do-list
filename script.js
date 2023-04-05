@@ -52,14 +52,6 @@ function saveTodos() {
   localStorage.setItem("todos", JSON.stringify(todos));
 }
 
-function loadTodos() {
-  const todosString = localStorage.getItem("todos");
-  if (todosString) {
-    todos = JSON.parse(todosString);
-  }
-  renderTodos();
-}
-
 function renderTodos() {
   let filteredTodos = todos.filter((todo) =>
     todo.text.toLowerCase().includes(searchInput.value.toLowerCase())
